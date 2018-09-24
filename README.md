@@ -1,2 +1,2 @@
 # Kaiser
-A POC Python file manager
+A Proof-of-Concept Python File Manager
