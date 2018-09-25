@@ -1,25 +1,31 @@
 def kaiser():
 
-	import subprocess, sys, os, shutil, time
+	import subprocess, sys, os, shutil
 
-	print("""Welcome to Kaiser
-		  [R] - Delete a file
+	print("""
+			-----Welcome to Kaiser-----
+		  [D] - Delete a file
 		  [N] - New File
-		  [X] - Exit
-		  What would you like to do?""")
-
+		  [X] - Exit""")
 	while True:
-		kaisernull = input("> ")
+		maininput = input("> ")
 
-		if kaisernull == "R":
-			delfile = input("Enter File Name ")
-			print("Removed", file)
-			os.remove(file)
-	
+		if maininput == "D":
+			delfile = input("Enter File Name to Delete ")
+			print("Deleted", delfile)
+			os.remove(delfile)
 
-		if kaisernull == "X":
+		if maininput == "N":
+			newfile = input("Enter New File Name ")
+			f= open(newfile,"w+")
+			print("Created", newfile)
+
+		if maininput == "X":
 			exit()
+
+
 
 		else:
 			kaiser()
 kaiser()
+
