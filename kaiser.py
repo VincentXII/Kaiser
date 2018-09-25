@@ -6,6 +6,7 @@ def kaiser():
 			-----Welcome to Kaiser-----
 		  [D] - Delete a file
 		  [N] - New File
+		  [T] - See Current Directory
 		  [X] - Exit""")
 	while True:
 		maininput = input("> ")
@@ -19,6 +20,10 @@ def kaiser():
 			newfile = input("Enter New File Name ")
 			f= open(newfile,"w+")
 			print("Created", newfile)
+
+		if maininput == "T":
+			dir_path = os.path.dirname(os.path.realpath(__file__))
+			print(os.getcwd())
 
 		if maininput == "X":
 			exit()
