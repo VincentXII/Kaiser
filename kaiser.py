@@ -41,8 +41,12 @@ def kaiser():
 
 		if maininput == "NF":
 			newfolder = input("Enter New Folder Name ")
-			os.mkdir(newfolder)
-			print("Created", newfolder)
+			try :
+				os.mkdir(newfolder)
+			except OSError:
+				print("Folder",newfolder, "already exists!")
+			else:
+				print("Created", newfolder)
 
 		if maininput == "T":
 			dir_path = os.path.dirname(os.path.realpath(__file__))
