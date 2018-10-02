@@ -5,6 +5,7 @@ def kaiser():
 	print("""
 			-----Welcome to Kaiser-----
 		  [D] - Delete a file
+		  [M] - Move File
 		  [N] - New File
 		  [T] - See Current Directory
 		  [X] - Exit""")
@@ -15,6 +16,12 @@ def kaiser():
 			delfile = input("Enter File Name to Delete ")
 			print("Deleted", delfile)
 			os.remove(delfile)
+
+		if maininput == "M":
+			mvfile = input("Enter File Name to Delete ")
+			directory = input("Move {} Where?".format(mvfile))
+			shutil.move(mvfile, directory)
+			print("Moved {} to {}".format(mvfile,directory))
 
 		if maininput == "N":
 			newfile = input("Enter New File Name ")
