@@ -8,6 +8,7 @@ def kaiser():
 		  [M] - Move File
 		  [N] - New File
 		  [T] - See Current Directory
+		  [TR] - See Tree of Directory
 		  [X] - Exit""")
 	while True:
 		maininput = input("> ")
@@ -32,9 +33,16 @@ def kaiser():
 			dir_path = os.path.dirname(os.path.realpath(__file__))
 			print(os.getcwd())
 
+		if maininput == "TR":
+			rootDir = input("What Directory would you like to see? ")
+			#rootDir = os.path.dirname(os.path.realpath(__file__))
+			for dirName, subdirList, fileList in os.walk(rootDir):
+				print('%s' % dirName)
+				for fname in fileList:
+					print('\t%s' % fname)
+
 		if maininput == "X":
 			exit()
-
 
 
 		else:
