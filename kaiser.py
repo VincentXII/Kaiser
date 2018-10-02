@@ -4,9 +4,11 @@ def kaiser():
 
 	print("""
 			-----Welcome to Kaiser-----
-		  [D] - Delete a file
+		  [D] - Delete A File
+		  [DF] - Delete A Folder
 		  [M] - Move File
 		  [N] - New File
+		  [NF] - New Folder
 		  [T] - See Current Directory
 		  [TR] - See Tree of Directory
 		  [X] - Exit""")
@@ -14,20 +16,33 @@ def kaiser():
 		maininput = input("> ")
 
 		if maininput == "D":
-			delfile = input("Enter File Name to Delete ")
-			print("Deleted", delfile)
+			delfile = input("Enter File Name to Delete: ")
 			os.remove(delfile)
+			print("Deleted", delfile)
+
+		if maininput == "DF":
+			delfolder = input("Enter Folder Name to Delete: ")
+			try:
+				os.rmdir(delfolder)
+			except OSError:
+				shutil.rmtree(delfolder)
+			print("Deleted", delfolder)
 
 		if maininput == "M":
 			mvfile = input("Enter File Name to Delete ")
-			directory = input("Move {} Where?".format(mvfile))
+			directory = input("Move {} Where? ".format(mvfile))
 			shutil.move(mvfile, directory)
 			print("Moved {} to {}".format(mvfile,directory))
 
 		if maininput == "N":
 			newfile = input("Enter New File Name ")
-			f= open(newfile,"w+")
+			f = open(newfile,"w+")
 			print("Created", newfile)
+
+		if maininput == "NF":
+			newfolder = input("Enter New Folder Name ")
+			os.mkdir(newfolder)
+			print("Created", newfolder)
 
 		if maininput == "T":
 			dir_path = os.path.dirname(os.path.realpath(__file__))
