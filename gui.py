@@ -1,26 +1,23 @@
 import subprocess, sys, os, shutil, tkinter
-from tkinter import Tk, Label, Button
+from tkinter import *
+
+kaiser = Tk()
+
+f= Frame(kaiser, height=150, width=360)
+f.pack_propagate(0)
+f.pack()
+
+L = Label(kaiser, anchor=NE, text="Kaiser GUI v0.1")
+L.pack()
+
+def exit():
+    global root
+    kaiser.quit()
 
 
-class Kaiser:
-    def __init__(self, master):
-        self.master = master
-        master.title("Kaiser GUI v0.1")
 
-        self.label = Label(master, text="Please Select an Option")
-        self.label.pack()
+exit = Button(kaiser, text="Exit Kaiser", command=exit)
+exit.pack(fill=BOTH, expand=1)
 
-        self.directory_button = Button(master, text="See Current Directory", command=self.directory)
-        self.directory_button.pack()
+mainloop()
 
-        self.exit_button = Button(master, text="Exit", command=master.quit)
-        self.exit_button.pack()
-
-    def directory(self):
-        dir_path = os.path.dirname(os.path.realpath(__file__))
-        print(os.getcwd())
-
-
-root = Tk()
-my_gui = Kaiser(root)
-root.mainloop()
