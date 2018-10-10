@@ -36,6 +36,9 @@ def exit():
 currentdir = Button(root, text="See Current Directory", command=currentdir)
 currentdir.pack() 
 
+delfile = Button(root, text="Delete File", command=delfile)
+delfile.pack()
+
 exit = Button(root, text="Exit Kaiser", command=exit)
 exit.pack(fill=BOTH, expand=1)
 
