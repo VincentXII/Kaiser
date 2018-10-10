@@ -18,15 +18,18 @@ f.pack()
 L = Label(root, anchor=NE, text="Kaiser GUI v0.1")
 L.pack()
 
-def exit():
-    global root
-    root.quit()
-
 def currentdir():
     dir_path = os.path.dirname(os.path.realpath(__file__))
     print(os.getcwd())
 
-currentdir = Button(root, text="Get Current Directory", command=currentdir)
+def delfile():
+
+def exit():
+    global root
+    root.quit()
+
+
+currentdir = Button(root, text="See Current Directory", command=currentdir)
 currentdir.pack() 
 
 exit = Button(root, text="Exit Kaiser", command=exit)
