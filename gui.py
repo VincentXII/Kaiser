@@ -23,6 +23,10 @@ def currentdir():
     print(os.getcwd())
 
 def delfile():
+	delfile = input("Enter File Name to Delete: ")
+	os.remove(delfile)
+	print("Deleted", delfile)
+
 
 def exit():
     global root
