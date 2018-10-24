@@ -1,4 +1,4 @@
-![Kaiser Logo](https://repo.vinlark.info/kaiser/logo.png)
+![Kaiser Logo](https://repo.vincentxii.us/kaiser/logo.png)
 
 Kaiser is a simple file manager made in Python. It includes no graphical interface and all interaction is done via the command line.
 
